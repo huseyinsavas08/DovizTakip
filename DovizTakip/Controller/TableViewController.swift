@@ -34,7 +34,9 @@ class TableViewController: UITableViewController {
         networkController.getData(rate: rateList[indexPath.row]) { price in
             
             DispatchQueue.main.async {
-                cell.myLabel.text = price.name + " " + String(price.result.turkish)
+                cell.myLabel.text = price.name + "\t" + String(price.result.turkish) + "₺"
+                
+                self.title = price.time
             }
         }
         
